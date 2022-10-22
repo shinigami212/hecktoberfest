@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int l, w, a;
+
+    cout<<"enter the length of room: ";
+    cin>>l;
+
+    cout<<"enter the width of room: ";
+    cin>>w;
+    
+    a=l*w;
+
+    cout<<"area of rooom is:"<<a;
+}
