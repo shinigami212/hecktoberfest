@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int num, i, ans;
+
+    cout<<"Enter the number:"<<endl;
+    cin>>num;
+
+    for(i=1; i<=10; i++)
+    {
+        ans = num*i;
+        cout<<num<<" * "<<i<<" = "<<ans;
+        cout<<endl;
+    }
+}
