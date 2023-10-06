@@ -1,0 +1,20 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    // Create an array or container with elements to be sorted
+    std::vector<int> numbers = {5, 2, 9, 1, 5, 6};
+
+    // Use std::sort to perform ascending sorting
+    std::sort(numbers.begin(), numbers.end());
+
+    // Display the sorted elements
+    std::cout << "Sorted numbers in ascending order: ";
+    for (const int &num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
