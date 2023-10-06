@@ -1,0 +1,23 @@
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    print("Enter a number: ")
+    val number = scanner.nextInt()
+    val reversedNumber = reverseNumber(number)
+    println("Reversed number: $reversedNumber")
+    scanner.close()
+}
+
+fun reverseNumber(number: Int): Int {
+    var reversedNumber = 0
+    var num = number
+
+    while (num != 0) {
+        val remainder = num % 10
+        reversedNumber = reversedNumber * 10 + remainder
+        num /= 10
+    }
+
+    return reversedNumber
+}
