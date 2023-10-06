@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+
+int hexadecimalToDecimal(const std::string& hex) {
+    int decimal = 0;
+    int power = 0;
+
+    // Iterate through the hexadecimal string in reverse order
+    for (int i = hex.length() - 1; i >= 0; i--) {
+        char c = hex[i];
+        int digit;
+
+        // Convert hexadecimal digit to its decimal value
+        if (c >= '0' && c <= '9') {
+            digit = c - '0';
+        } else if (c >= 'A' && c <= 'F') {
+            digit = 10 + (c - 'A');
+        } else if (c >= 'a' && c <= 'f') {
+            digit = 10 + (c - 'a');
+        } else {
+            std::cerr << "Invalid hexadecimal input: " << hex << std::endl;
+            return -1; // Error, invalid input
+        }
+
+        // Calculate the decimal value by adding the digit * 16^power
+        decimal += digit * static_cast<int>(std::pow(16, power));
+        power++;
+    }
+
+    return decimal;
+}
+
+int main() {
+    std::string hex;
+
+    // Input a hexadecimal number from the user
+    std::cout << "Enter a hexadecimal number: ";
+    std::cin >> hex;
+
+    int decimal = hexadecimalToDecimal(hex);
+
+    if (decimal != -1) {
+        std::cout << "Decimal equivalent: " << decimal << std::endl;
+    }
+
+    return 0;
+}
