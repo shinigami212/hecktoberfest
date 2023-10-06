@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+
+bool containsSubstring(const std::string& text, const std::string& substring) {
+    return text.find(substring) != std::string::npos;
+}
+
+int main() {
+    std::string longString = "This is a very long string containing the substring we want to check.";
+    std::string substringToCheck = "substring";
+
+    if (containsSubstring(longString, substringToCheck)) {
+        std::cout << "The substring is present in the text." << std::endl;
+    } else {
+        std::cout << "The substring is not present in the text." << std::endl;
+    }
+
+    return 0;
+}
