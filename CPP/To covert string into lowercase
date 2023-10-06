@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+// Function to convert a string to lowercase
+std::string toLowerCase(const std::string& input) {
+    std::string result;
+    for (char c : input) {
+        result += std::tolower(c);
+    }
+    return result;
+}
+
+int main() {
+    std::string input;
+
+    // Prompt the user for input
+    std::cout << "Enter a string: ";
+    std::cin >> input;
+
+    // Convert the input string to lowercase
+    std::string lowercaseString = toLowerCase(input);
+
+    // Display the lowercase string
+    std::cout << "Lowercase: " << lowercaseString << std::endl;
+
+    return 0;
+}
