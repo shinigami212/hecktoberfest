@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <cctype> // For isalpha() and tolower() functions
+
+int main() {
+    std::string input;
+    std::cout << "Enter a string: ";
+    std::getline(std::cin, input);
+
+    int vowels = 0, consonants = 0;
+
+    for (char c : input) {
+        // Convert the character to lowercase for case-insensitive matching
+        c = tolower(c);
+
+        if (isalpha(c)) {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+    }
+
+    std::cout << "Number of vowels: " << vowels << std::endl;
+    std::cout << "Number of consonants: " << consonants << std::endl;
+
+    return 0;
+}
