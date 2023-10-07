@@ -1,9 +1,7 @@
-
+//7. Largest Among Three: Find and display the largest among three numbers
 
 public class largestNum {
-    /**
-     * @param a
-     */
+   
     public static void largeEle(int a,int b,int c)
     {
         System.out.println("Numbers are:-" +a+" "+b+" "+c);
