@@ -1,0 +1,14 @@
+#include <iostream>
+#include <fstream>
+
+int main() {
+    std::ofstream outputFile("output.txt");
+    if (outputFile.is_open()) {
+        outputFile << "Hello, File World!";
+        outputFile.close();
+        std::cout << "Data written to the file." << std::endl;
+    } else {
+        std::cout << "Unable to open the file." << std::endl;
+    }
+    return 0;
+}
