@@ -1,29 +1,32 @@
 #include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
 
-int isPalindrome(int num) {
-    int reversedNum = 0, originalNum = num;
+bool isPalindrome(char str[]) {
+    int left = 0;
+    int right = strlen(str) - 1;
 
-    // Reverse the number
-    while (num > 0) {
-        int digit = num % 10;
-        reversedNum = reversedNum * 10 + digit;
-        num /= 10;
+    while (left < right) {
+        if (str[left] != str[right]) {
+            return false; 
+        }
+        left++;
+        right--;
     }
-
-    // Check if the number is a palindrome
-    return originalNum == reversedNum;
+    return true; 
 }
 
 int main() {
-    int num;
-
-    printf("Enter a number: ");
-    scanf("%d", &num);
-
-    if (isPalindrome(num))
-        printf("%d is a palindrome.\n", num);
-    else
-        printf("%d is not a palindrome.\n", num);
-
+    char input[100];
+    
+    printf("Enter a string: ");
+    scanf("%s", input);
+    
+    if (isPalindrome(input)) {
+        printf("'%s' is a palindrome.\n", input);
+    } else {
+        printf("'%s' is not a palindrome.\n", input);
+    }
+    
     return 0;
 }
