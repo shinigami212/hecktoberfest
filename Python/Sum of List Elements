@@ -1,0 +1,24 @@
+def sum_of_list_elements(lst):
+    total = 0
+    for element in lst:
+        total += element
+    return total
+
+input_str = input("Enter a list of numbers : ")
+
+input_list = []
+
+number_str = ""
+for char in input_str:
+    if char.isdigit() or (char == '-' and not number_str):
+        number_str += char
+    elif number_str:
+        input_list.append(int(number_str))
+        number_str = ""
+
+if number_str:
+    input_list.append(int(number_str))
+
+result = sum_of_list_elements(input_list)
+
+print(f"The sum of elements in the list is: {result}")
